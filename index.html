@@ -14,7 +14,7 @@
       padding: 0;
     }
 
-    /* --- BARRA COMPACTA Y LOGO GRANDE --- */
+    /* --- BARRA COMPACTA, LOGO GRANDE Y TEXTO CENTRADO --- */
 .navbar {
   position: fixed !important;
   top: 0 !important;
@@ -25,7 +25,6 @@
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  /* Reducimos el padding vertical para que la barra se vea más delgada */
   padding: 6px 16px !important;
   box-sizing: border-box !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9) !important;
@@ -35,25 +34,26 @@
 
 .brand-container {
   display: flex !important;
-  align-items: center !important;
+  align-items: center !important; /* Centra perfectamente las letras con el logo */
   gap: 12px !important;
 }
 
-/* LOGO MÁS GRANDE PERO DENTRO DE UNA BARRA DELGADA */
+/* LOGO MÁS GRANDE */
 .navbar img, .navbar svg, .brand-container img, .brand-container svg {
-  height: 48px !important; /* Logo más grande pero controlado */
+  height: 58px !important; /* Subimos el tamaño para que luzca más grande */
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
 }
 
-/* Texto y botón intactos en su tamaño original */
+/* TEXTO PHANTOM CLUB CENTRADO VERTICALMENTE */
 .navbar h1, .navbar .brand-title, .brand-container span {
   font-size: 1.1rem !important;
   font-weight: bold !important;
   white-space: nowrap !important;
   color: #ffffff !important;
   margin: 0 !important;
+  line-height: 1 !important; /* Asegura un centrado vertical impecable */
 }
 
 .navbar .btn-store {
@@ -67,10 +67,11 @@
   text-decoration: none !important;
 }
 
-/* Ajuste del cuerpo acorde a la barra más delgada */
+/* Ajuste del cuerpo */
 body {
   padding-top: 65px !important;
-}
+    }
+    
     
     
     
