@@ -231,21 +231,26 @@
  
 }
 
-/* --- ENCABEZADO FIJO (STICKY) Y ANIMACIÓN DE FILTRADO --- */
 .navbar {
   position: fixed !important;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100% !important;
   background-color: #0a0a0a !important;
-  z-index: 9999;
-  box-sizing: border-box;
-  padding: 12px 16px !important;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.6);
-  max-width: 1200px;
-  margin: 0 auto;
-  right: 0;
+  z-index: 99999 !important;
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+  padding: 10px 16px !important;
+  box-sizing: border-box !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8) !important;
 }
+
+/* Esto asegura que el contenido de abajo no quede tapado por la barra fija */
+body {
+  padding-top: 80px !important;
+}
+    
 
 body {
   padding-top: 85px !important;
