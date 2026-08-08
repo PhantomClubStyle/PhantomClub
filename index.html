@@ -14,7 +14,7 @@
       padding: 0;
     }
 
-        /* --- BARRA FIJA Y DEFINITIVA --- */
+            /* --- BARRA FIJA Y DEFINITIVA --- */
     .navbar {
       position: fixed !important;
       top: 0 !important;
@@ -23,26 +23,25 @@
       background-color: #0a0a0a !important; 
       z-index: 99999 !important;
       display: grid !important;
-      grid-template-columns: 1fr auto 1fr !important; /* Divide en 3 partes para centrar perfecto */
+      grid-template-columns: 1fr auto 1fr !important; /* Centra la columna del medio matemáticamente */
       align-items: center !important;
-      height: 75px !important; /* Ligeramente más alta para el logo grande */
+      height: 75px !important; /* VOLVIMOS A LA BARRA PEQUEÑA */
       padding: 0 16px !important;
       box-sizing: border-box !important;
       box-shadow: 0 4px 15px rgba(0, 0, 0, 0.8) !important;
       margin: 0 !important;
     }
 
-         /* --- BLOQUE CENTRAL (LOGO + TEXTO CENTRADOS COMO UN SOLO CONJUNTO) --- */
+    /* --- BLOQUE CENTRAL --- */
     .brand-container {
       grid-column: 2 !important; 
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      gap: 12px !important; /* Esta es la separación entre el logo y el texto */
-      height: 100% !important; 
+      position: relative !important; /* Obligatorio para sacar el logo del flujo */
     }
 
-    /* TEXTO PHANTOM CLUB */
+    /* TEXTO PHANTOM CLUB (VUELVE AL CENTRO EXACTO) */
     .brand-container span, .brand-name, .navbar h1 {
       font-weight: 900 !important;
       font-size: 18px !important;
@@ -50,22 +49,21 @@
       color: #ffffff !important;
       margin: 0 !important;
       white-space: nowrap !important;
-      line-height: 1 !important; 
     }
 
-    /* LOGO VECTORIZADO INTEGRADO AL CONJUNTO */
+    /* LOGO VECTORIZADO (A LA IZQUIERDA SIN EMPUJAR) */
     .brand-container svg {
-      /* Le quitamos la posición absoluta para que cuente en el peso visual */
-      position: static !important; 
-      transform: none !important;
-      width: 100px !important;
-      height: 100px !important;
+      position: absolute !important;
+      right: 100% !important; /* Esto evita que mueva el texto */
+      top: 50% !important; 
+      transform: translateY(-50%) !important; /* Lo centra de arriba a abajo */
+      margin: 0 !important;
+      margin-right: 12px !important;
+      width: 100px !important; /* TU TAMAÑO ELEGIDO */
+      height: 100px !important; /* TU TAMAÑO ELEGIDO */
       display: block !important;
       max-width: none !important;
-      margin: 0 !important; 
     }
-    
-    
 
     /* --- BOTÓN STORE A LA DERECHA --- */
     .navbar .btn-store, .store-btn {
@@ -87,8 +85,9 @@
     body {
       background-color: #0a0a0a !important;
       color: #ffffff !important;
-      padding-top: 95px !important; /* Ajustado para que las tarjetas no choquen con la barra */
-    }
+      padding-top: 95px !important; /* Volvimos al espacio original para las tarjetas */
+      }
+      
     
   
 
