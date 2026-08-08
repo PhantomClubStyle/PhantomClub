@@ -8,6 +8,33 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap" rel="stylesheet">
   <style>
+    .btn-pill {
+  background-color: #121212;
+  border: 1px solid #2a2a2a;
+  color: #a1a1a1;
+  padding: 10px 20px;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+  outline: none;
+}
+
+/* Animación al presionar con el dedo */
+.btn-pill:active {
+  transform: scale(0.93);
+}
+
+/* Botón activo (estilo cápsula blanca como la foto) */
+.btn-pill.active {
+  background-color: #ffffff;
+  border-color: #ffffff;
+  color: #000000;
+  font-weight: 700;
+}
+
     * {
       box-sizing: border-box;
       margin: 0;
