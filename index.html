@@ -14,55 +14,52 @@
       padding: 0;
     }
 
-    /* --- ENCABEZADO FIJO, NEGRO Y LOGO GRANDE (CORREGIDO) --- */
+    /* --- BARRA COMPACTA Y LOGO GRANDE --- */
 .navbar {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  /* Fondo NEGRO ABSOLUTO */
   background-color: #000000 !important;
   z-index: 99999 !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  /* Padding compacto para que la barra no sea gigante */
-  padding: 10px 16px !important;
+  /* Reducimos el padding vertical para que la barra se vea más delgada */
+  padding: 6px 16px !important;
   box-sizing: border-box !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9) !important;
   max-width: 100% !important;
   margin: 0 !important;
 }
 
-/* Contenedor de logo y texto a la izquierda */
 .brand-container {
   display: flex !important;
   align-items: center !important;
-  gap: 15px !important; /* Espacio entre el logo y "PHANTOM CLUB" */
+  gap: 12px !important;
 }
 
-/* LOGO MÁS GRANDE (Lo subimos a 60px) */
+/* LOGO MÁS GRANDE PERO DENTRO DE UNA BARRA DELGADA */
 .navbar img, .navbar svg, .brand-container img, .brand-container svg {
-  height: 60px !important; /* Aumentamos el tamaño aquí */
+  height: 48px !important; /* Logo más grande pero controlado */
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
 }
 
-/* TEXTO PHANTOM CLUB (Tamaño original pequeño y elegante) */
+/* Texto y botón intactos en su tamaño original */
 .navbar h1, .navbar .brand-title, .brand-container span {
-  font-size: 1.1rem !important; /* Mantenemos el tamaño original */
+  font-size: 1.1rem !important;
   font-weight: bold !important;
   white-space: nowrap !important;
   color: #ffffff !important;
   margin: 0 !important;
 }
 
-/* BOTÓN STORE (Tamaño original, pequeño y a la derecha) */
 .navbar .btn-store {
-  padding: 6px 12px !important; /* Mantenemos el tamaño original */
-  font-size: 0.8rem !important; /* Mantenemos el tamaño original */
-  border-radius: 15px !important;
+  padding: 6px 14px !important;
+  font-size: 0.85rem !important;
+  border-radius: 20px !important;
   background: transparent !important;
   color: #ffffff !important;
   border: 1px solid #ffffff !important;
@@ -70,10 +67,11 @@
   text-decoration: none !important;
 }
 
-/* Ajuste del cuerpo para no tapar la barra (80px es suficiente) */
+/* Ajuste del cuerpo acorde a la barra más delgada */
 body {
-  padding-top: 80px !important;
+  padding-top: 65px !important;
 }
+    
     
     
   
