@@ -14,7 +14,7 @@
       padding: 0;
     }
 
-    /* --- BARRA FIJA, NEGRA Y PERFECTA --- */
+    /* --- BARRA DELGADA Y FIJA --- */
 .navbar {
   position: fixed !important;
   top: 0 !important;
@@ -25,7 +25,8 @@
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  padding: 10px 16px !important;
+  height: 55px !important; /* Forzamos una altura fija y delgada para la barra */
+  padding: 0 16px !important;
   box-sizing: border-box !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9) !important;
   max-width: 100% !important;
@@ -35,24 +36,23 @@
 .brand-container {
   display: flex !important;
   align-items: center !important;
-  gap: 15px !important;
+  gap: 12px !important;
+  height: 100% !important;
 }
 
-/* --- TAMAÑO DEL LOGO VECTORIZADO (SVG) --- */
+/* --- LOGO GRANDE SIN AGRANDAR LA BARRA --- */
 .brand-container svg, 
 .navbar svg {
-  width: 65px !important;  /* Cambia este número si lo quieres más grande o más pequeño */
-  height: 65px !important; /* Cambia este número si lo quieres más grande o más pequeño */
-  min-width: 65px !important;
-  min-height: 65px !important;
-  max-width: none !important;
-  max-height: none !important;
-  display: block !important;
+  width: 50px !important;
+  height: 50px !important;
+  min-width: 50px !important;
+  min-height: 50px !important;
+  overflow: visible !important; /* Permite que sobresalga visualmente si es necesario sin deformar */
 }
 
 /* TEXTO PHANTOM CLUB */
 .navbar h1, .navbar .brand-title, .brand-container span {
-  font-size: 1.2rem !important;
+  font-size: 1.1rem !important;
   font-weight: bold !important;
   white-space: nowrap !important;
   color: #ffffff !important;
@@ -61,7 +61,7 @@
 
 /* BOTÓN STORE */
 .navbar .btn-store {
-  padding: 8px 16px !important;
+  padding: 6px 14px !important;
   font-size: 0.85rem !important;
   border-radius: 20px !important;
   background: transparent !important;
@@ -71,17 +71,15 @@
   text-decoration: none !important;
 }
 
-/* ESPACIO PARA QUE LA BARRA NO TAPE EL CONTENIDO */
+/* ESPACIO PARA EL CUERPO */
 body {
   background-color: #0a0a0a !important;
   color: #ffffff !important;
-  padding-top: 85px !important;
+  padding-top: 70px !important;
 }
     
     
-    
-    
-    
+      
         
 
     .brand-container svg {
