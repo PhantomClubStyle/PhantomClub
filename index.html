@@ -222,10 +222,27 @@
 
   <!-- Navbar Header -->
   <nav class="navbar">
-    <div class="brand-container" style="display: flex; align-items: center; gap: 8px;">
-  <div style="width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; overflow: hidden;">
-    <img src="logo.png" alt="Logo" style="width: 100%; height: 100%; object-fit: contain; filter: invert(1); mix-blend-mode: screen; image-rendering: -webkit-optimize-contrast;">
-  </div>
+    <div class="brand-container" style="display: flex; align-items: center; gap: 10px;">
+  <!-- Logo Vectorial SVG - No requiere subir ninguna imagen -->
+  <svg width="34" height="34" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg" style="display: block;">
+    <!-- Círculo craquelado exterior -->
+    <circle cx="250" cy="250" r="180" stroke="white" stroke-width="12" stroke-dasharray="25 10 15 10"/>
+    <circle cx="250" cy="250" r="160" stroke="white" stroke-width="6"/>
+    <!-- Detalles de grietas en la pared del círculo -->
+    <path d="M 100 200 L 120 220 M 380 180 L 400 160 M 110 300 L 130 280 M 370 320 L 390 340" stroke="white" stroke-width="4"/>
+    <!-- Gorra -->
+    <path d="M 180 170 C 180 110, 320 110, 320 170 Z" fill="white"/>
+    <path d="M 215 170 C 215 125, 285 125, 285 170 Z" fill="#0a0a0a"/>
+    <path d="M 160 170 C 200 160, 300 160, 350 185 C 320 195, 200 195, 160 170 Z" fill="white"/>
+    <!-- Cara en sombra -->
+    <path d="M 195 185 L 305 185 L 290 240 L 210 240 Z" fill="#0a0a0a"/>
+    <!-- Cuerpo de la manta del fantasma -->
+    <path d="M 195 240 Q 180 320 170 340 Q 190 310 205 350 Q 220 300 235 370 Q 250 290 265 360 Q 280 310 295 340 Q 305 300 320 320 L 305 240 Z" fill="white"/>
+  </svg>
+
+  <div class="brand-logo" style="margin: 0; padding: 0;">PHANTOM CLUB</div>
+    </div>
+    
   <div class="brand-logo" style="margin: 0; padding: 0;">PHANTOM CLUB</div>
     </div>
     
