@@ -229,6 +229,29 @@
     .modal-description { font-size: 0.85rem; color: #ccc; line-height: 1.4; margin-bottom: 15px; }
     .close-modal { position: absolute; top: 10px; right: 15px; color: white; font-size: 28px; font-weight: bold; cursor: pointer; z-index: 11; }
   </style>
+
+  <style>
+  header svg {
+      transform: translateX(-30px) !important;
+  }
+  </style>
+  <style>
+  /* Pega esto antes de </head> */
+  header {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: flex-start !important;
+      gap: 12px !important;
+  }
+  header svg {
+      transform: translateX(-15px) !important;
+  }
+  /* Esto obliga a que PHANTOM CLUB se quede estrictamente en una sola línea */
+  header span, .brand-name {
+      white-space: nowrap !important;
+  }
+  </style>
+  
 </head>
 <body>
 
@@ -300,18 +323,6 @@
     <a href="#" class="store-btn">STORE</a>
   </header>
 
-  <style>
-  /* Esto mueve tu logo a la izquierda sin tocar sus vectores */
-  svg {
-      margin-left: -25px;
-  }
-  
-  /* Esto alinea el logo y el texto horizontalmente */
-  header {
-      display: flex;
-      align-items: center;
-  }
-  </style>
   
   <!-- Store Header -->
   <div class="catalog-header">
