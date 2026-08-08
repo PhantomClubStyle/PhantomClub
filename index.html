@@ -446,21 +446,31 @@
     document.getElementById('modalTitle').innerText = title;
     document.getElementById('modalPrice').innerText = price;
     document.getElementById('modalDescription').innerText = description;
-    
-    // Configura el link de WhatsApp automático con el nombre de la gorra
-    document.getElementById('modalWspBtn').href = `https://wa.me/584128705612?text=Hola!%20Me%20interesa%20la%20gorra:%20${encodeURIComponent(title)}`;
+    document.getElementById('modalWspBtn').href = `https://wa.me/584128705612?text=Hola!%20Me%20interesa%20la%20${encodeURIComponent(title)}`;
 
-    document.getElementById('videoModal').style.display = 'flex';
+    const modal = document.getElementById('videoModal');
+    modal.style.display = 'flex';
+    
+    // Un pequeño delay para activar la animación suave
+    setTimeout(() => {
+      modal.classList.add('show');
+    }, 10);
   }
 
   function closeVideoModal(eventForce) {
-    // Cierra si se hace click fuera del contenido o en la 'X'
     if (eventForce === true || eventForce.target.id === 'videoModal') {
       const modal = document.getElementById('videoModal');
       const video = document.getElementById('modalVideo');
-      modal.style.display = 'none';
-      video.src = ''; // Pausa y resetea el video al cerrar
+      
+      modal.classList.remove('show'); // Animación de salida
+      
+      // Espera que termine la animación (300ms) para ocultarlo del todo
+      setTimeout(() => {
+        modal.style.display = 'none';
+        video.src = '';
+      }, 300);
     }
   }
 </script>
+    
     
