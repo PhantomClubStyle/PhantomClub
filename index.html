@@ -14,7 +14,7 @@
       padding: 0;
     }
 
-    /* --- BARRA COMPACTA, LOGO GRANDE Y TEXTO CENTRADO --- */
+    /* --- BARRA DELGADA, FONDO NEGRO, LOGO GRANDE Y TEXTO CENTRADO --- */
 .navbar {
   position: fixed !important;
   top: 0 !important;
@@ -34,29 +34,34 @@
 
 .brand-container {
   display: flex !important;
-  align-items: center !important; /* Centra perfectamente las letras con el logo */
+  align-items: center !important;
+  justify-content: center !important;
   gap: 12px !important;
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
 }
 
 /* LOGO MÁS GRANDE */
 .navbar img, .navbar svg, .brand-container img, .brand-container svg {
-  height: 58px !important; /* Subimos el tamaño para que luzca más grande */
+  height: 48px !important;
   width: auto !important;
   object-fit: contain !important;
   display: block !important;
 }
 
-/* TEXTO PHANTOM CLUB CENTRADO VERTICALMENTE */
+/* TEXTO PHANTOM CLUB BLANCO EN EL MEDIO */
 .navbar h1, .navbar .brand-title, .brand-container span {
   font-size: 1.1rem !important;
   font-weight: bold !important;
   white-space: nowrap !important;
   color: #ffffff !important;
   margin: 0 !important;
-  line-height: 1 !important; /* Asegura un centrado vertical impecable */
 }
 
+/* BOTÓN STORE A LA DERECHA */
 .navbar .btn-store {
+  margin-left: auto !important;
   padding: 6px 14px !important;
   font-size: 0.85rem !important;
   border-radius: 20px !important;
@@ -65,21 +70,21 @@
   border: 1px solid #ffffff !important;
   cursor: pointer !important;
   text-decoration: none !important;
+  z-index: 2 !important;
 }
 
 /* Ajuste del cuerpo */
 body {
+  background-color: #0a0a0a !important;
+  color: #ffffff !important;
   padding-top: 65px !important;
-    }
+}
     
     
-    
-    
-  
-    
+        
 
     .brand-container svg {
-      height: 38px;
+      height: 65px;
       width: auto;
       display: block;
       flex-shrink: 0;
