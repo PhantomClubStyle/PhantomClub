@@ -322,3 +322,20 @@
     </a>
   </div>
 </div>
+    <script>
+  function filterProducts(category) {
+    const cards = document.querySelectorAll('.product-card');
+    cards.forEach(card => {
+      if (category === 'all') {
+        card.style.display = 'block';
+      } else if (category === 'exclusive') {
+        if (card.classList.contains('category-exclusive')) {
+          card.style.display = 'block';
+        } else {
+          card.style.display = 'none';
+        }
+      }
+    });
+  }
+    </script>
+    
