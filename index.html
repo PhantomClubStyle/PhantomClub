@@ -230,11 +230,12 @@
   </div>
 
   <!-- Category Bar -->
-  <div style="display: flex; gap: 10px; margin: 20px 0;">
-  <button onclick="filterProducts('all', this)" class="btn-filter active">TODAS</button>
-  <button onclick="filterProducts('exclusive', this)" class="btn-filter">EXCLUSIVAS</button>
+  <div class="filter-container" style="display: flex; gap: 10px; margin: 20px 0; overflow-x: auto;">
+  <button onclick="filterProducts('all', this)" class="btn-pill active">Todas las Gorras</button>
+  <button onclick="filterProducts('exclusive', this)" class="btn-pill">Exclusivas</button>
   </div>
   
+
 
   <!-- Products Grid -->
   <div class="products-grid">
