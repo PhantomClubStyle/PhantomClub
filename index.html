@@ -257,10 +257,16 @@
   </div>
 
   <!-- Category Bar -->
-  <div class="filter-container" style="display: flex; gap: 10px; margin: 20px 0; overflow-x: auto;">
-  <button onclick="filterProducts('all', this)" class="btn-pill active">Todas las Gorras</button>
-  <button onclick="filterProducts('exclusive', this)" class="btn-pill">Exclusivas</button>
+  <div style="display: flex; gap: 10px; margin: 20px 0;">
+  <button onclick="filterProducts('all')" style="background-color: #121212; border: 1px solid #2a2a2a; color: #ffffff; padding: 8px 18px; border-radius: 20px; font-weight: bold; font-size: 13px; cursor: pointer;">
+    Todas las Gorras
+  </button>
+  
+  <button onclick="filterProducts('exclusive')" style="background-color: #121212; border: 1px solid #2a2a2a; color: #a1a1a1; padding: 8px 18px; border-radius: 20px; font-weight: bold; font-size: 13px; cursor: pointer;">
+    Exclusivas
+  </button>
   </div>
+  
   
 
 
