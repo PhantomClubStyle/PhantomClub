@@ -14,45 +14,66 @@
       padding: 0;
     }
 
-    /* --- ENCABEZADO FIJO COMPACTO Y ALINEADO --- */
+    /* --- ENCABEZADO FIJO, NEGRO Y LOGO MÁS GRANDE --- */
 .navbar {
   position: fixed !important;
   top: 0 !important;
   left: 0 !important;
   width: 100% !important;
-  background-color: #000000 !important; /* Fondo negro puro */
+  /* Fondo negro absoluto */
+  background-color: #000000 !important;
   z-index: 99999 !important;
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  padding: 10px 16px !important;
+  /* Padding ajustado para el nuevo logo */
+  padding: 12px 16px !important;
   box-sizing: border-box !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9) !important;
+  max-width: 100% !important;
+  margin: 0 !important;
 }
 
 .brand-container {
   display: flex !important;
   align-items: center !important;
-  gap: 12px !important;
+  gap: 15px !important;
 }
 
-/* Logo más grande */
+/* LOGO MÁS GRANDE (65px) */
 .navbar img, .navbar svg, .brand-container img, .brand-container svg {
-  height: 52px !important; /* Subimos el tamaño */
+  height: 65px !important; 
   width: auto !important;
+  max-width: none !important;
+  object-fit: contain !important;
 }
 
-.brand-container span, .navbar h1, .navbar .brand-title {
-  font-size: 1.15rem !important;
+/* TEXTO PHANTOM CLUB (Tamaño original) */
+.navbar h1, .navbar .brand-title, .brand-container span {
+  font-size: 1.1rem !important; /* Volvemos al tamaño original */
   font-weight: bold !important;
   white-space: nowrap !important;
   color: #ffffff !important;
   margin: 0 !important;
+  letter-spacing: 0 !important;
 }
 
-body {
-  padding-top: 75px !important;
+/* BOTÓN STORE (Tamaño original) */
+.navbar .btn-store {
+  padding: 6px 12px !important; /* Volvemos al tamaño original */
+  font-size: 0.8rem !important; /* Volvemos al tamaño original */
+  border-radius: 15px !important;
+  background: transparent !important;
+  color: #ffffff !important;
+  border: 1px solid #ffffff !important;
+  cursor: pointer !important;
 }
+
+/* Ajustamos el padding del cuerpo para que no tape la barra más alta */
+body {
+  padding-top: 90px !important; /* Espacio necesario para el logo grande */
+}
+    
   
     
 
