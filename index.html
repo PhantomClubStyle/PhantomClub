@@ -278,16 +278,24 @@
 }
 
 
-.product-card {
-  transition: opacity 0.3s ease, transform 0.3s ease;
-}
+    /* 1. Aseguramos que la tarjeta tenga su transición fluida */
+    .product-card {
+      transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out !important;
+      opacity: 1;
+      transform: scale(1);
+    }
 
-.product-card.hidden-card {
-  opacity: 0;
-  transform: scale(0.93);
-  display: none !important;
-}
-</style>
+    /* 2. Fase de animación: Se hace transparente y un poco más pequeña */
+    .product-card.fade-out {
+      opacity: 0 !important;
+      transform: scale(0.8) !important;
+    }
+
+    /* 3. Fase de ocultamiento: Se quita del espacio (se aplica DESPUÉS de la animación) */
+    .product-card.hidden-card {
+      display: none !important;
+    }
+    </style>
   
   
   
