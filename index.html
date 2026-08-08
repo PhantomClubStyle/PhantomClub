@@ -334,14 +334,22 @@
   </div>
 </div>
     <script>
-  function filterProducts(category) {
+  function filterProducts(category, btnElement) {
+    // Hace que el botón presionado se ponga blanco
+    const buttons = document.querySelectorAll('.btn-filter');
+    buttons.forEach(b => b.classList.remove('active'));
+    if (btnElement) {
+      btnElement.classList.add('active');
+    }
+
+    // Muestra u oculta los productos
     const cards = document.querySelectorAll('.product-card');
     cards.forEach(card => {
       if (category === 'all') {
-        card.style.display = 'block';
+        card.style.display = 'flex';
       } else if (category === 'exclusive') {
         if (card.classList.contains('category-exclusive')) {
-          card.style.display = 'block';
+          card.style.display = 'flex';
         } else {
           card.style.display = 'none';
         }
@@ -349,4 +357,5 @@
     });
   }
     </script>
+    
     
