@@ -32,29 +32,39 @@
       margin: 0 !important;
     }
 
-     /* --- BLOQUE CENTRAL (LOGO + TEXTO) --- */
+         /* --- BLOQUE CENTRAL (LOGO + TEXTO CENTRADOS COMO UN SOLO CONJUNTO) --- */
     .brand-container {
       grid-column: 2 !important; 
       display: flex !important;
       align-items: center !important;
       justify-content: center !important;
-      position: relative !important; /* Clave para anclar el logo a la izquierda */
-      margin: 0 auto !important;
+      gap: 12px !important; /* Esta es la separación entre el logo y el texto */
+      height: 100% !important; 
     }
 
-    /* LOGO VECTORIZADO GRANDE A LA IZQUIERDA */
-    .brand-container svg {
-      position: absolute !important;
-      right: 100% !important; /* Lo empuja exactamente a la izquierda del texto */
-      top: 50% !important; 
-      transform: translateY(-50%) !important; /* Lo centra perfectamente en vertical */
+    /* TEXTO PHANTOM CLUB */
+    .brand-container span, .brand-name, .navbar h1 {
+      font-weight: 900 !important;
+      font-size: 18px !important;
+      letter-spacing: 1.5px !important;
+      color: #ffffff !important;
       margin: 0 !important;
-      margin-right: 12px !important; /* Separación con el texto PHANTOM CLUB */
-      width: 100px !important; /* AUMENTAMOS EL TAMAÑO AQUÍ */
-      height: 100px !important; /* AUMENTAMOS EL TAMAÑO AQUÍ */
-      max-width: none !important; /* Ignora cualquier límite del HTML */
-      display: block !important;
+      white-space: nowrap !important;
+      line-height: 1 !important; 
     }
+
+    /* LOGO VECTORIZADO INTEGRADO AL CONJUNTO */
+    .brand-container svg {
+      /* Le quitamos la posición absoluta para que cuente en el peso visual */
+      position: static !important; 
+      transform: none !important;
+      width: 100px !important;
+      height: 100px !important;
+      display: block !important;
+      max-width: none !important;
+      margin: 0 !important; 
+    }
+    
     
 
     /* --- BOTÓN STORE A LA DERECHA --- */
