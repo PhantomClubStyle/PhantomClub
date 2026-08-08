@@ -215,7 +215,18 @@
   }
       
   </style>
-
+<style>
+  .video-modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.9); z-index: 1000; justify-content: center; align-items: center; padding: 20px; box-sizing: border-box; }
+  .modal-content { background: #121212; border: 1px solid #222; border-radius: 12px; max-width: 420px; width: 100%; overflow: hidden; position: relative; }
+  .modal-video-wrapper { width: 100%; aspect-ratio: 9/16; max-height: 55vh; background: #000; }
+  .modal-info { padding: 15px; color: #fff; }
+  .modal-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 5px; }
+  .modal-price { color: #00ff66; font-weight: bold; margin-bottom: 8px; }
+  .modal-description { font-size: 0.85rem; color: #ccc; line-height: 1.4; margin-bottom: 15px; }
+  .close-modal { position: absolute; top: 10px; right: 15px; color: white; font-size: 28px; font-weight: bold; cursor: pointer; z-index: 11; }
+  .video-wrapper { cursor: pointer; }
+</style>
+  
 
 </head>
 <body>
@@ -269,7 +280,7 @@
 
 <!-- Producto 1 -->
 <div class="product-card category-exclusive">
-  <div class="video-wrapper" style="position: relative; width: 100%; aspect-ratio: 1 / 1.1; overflow: hidden; border-radius: 12px 12px 0 0;">
+  <div class="video-wrapper" onclick="openVideoModal(this)" data-title="DandyHats x Fuerza Regida" data-price="$46.00 BCV" data-description="Gorra exclusiva edición especial en colaboración con Fuerza Regida. Bordado de alta densidad y visera de máxima calidad." style="position: relative; width: 100%; aspect-ratio: 1 / 1.1; overflow: hidden; border-radius: 12px 12px 0 0; cursor: pointer;">
     <span style="position: absolute; top: 10px; left: 10px; background: #e60000; color: white; padding: 4px 8px; font-size: 10px; font-weight: bold; border-radius: 4px; z-index: 10; letter-spacing: 1px;">EXCLUSIVO</span>
     <video autoplay loop muted playsinline preload="auto" style="width: 100%; height: 100%; object-fit: cover; display: block;">
       <source src="https://raw.githubusercontent.com/PhantomClubStyle/PhantomClub/main/VID-20260806-WA0052.mp4" type="video/mp4">
@@ -286,6 +297,7 @@
     </a>
   </div>
 </div>
+    
 
 <!-- Producto 2 -->
 <div class="product-card">
@@ -373,4 +385,51 @@
   }
     </script>
     
+    <!-- VENTANA POPUP MODAL (Pegar aquí) -->
+<div id="videoModal" class="video-modal" onclick="closeVideoModal(event)">
+  <div class="modal-content" onclick="event.stopPropagation()">
+    <span class="close-modal" onclick="closeVideoModal(true)">&times;</span>
+    <div class="modal-video-wrapper">
+      <video id="modalVideo" autoplay loop muted playsinline style="width:100%; height:100%; object-fit:cover;"></video>
+    </div>
+    <div class="modal-info">
+      <div id="modalTitle" class="modal-title" style="font-weight: bold; font-size: 1.2em; color: white;"></div>
+      <div id="modalPrice" class="modal-price" style="color: #2ecc71; font-weight: bold; margin-bottom: 10px;"></div>
+      <div id="modalDescription" class="modal-description" style="color: #bdc3c7; margin-bottom: 15px;"></div>
+      <a id="modalWspBtn" href="#" class="btn-whatsapp" style="display:flex; justify-content:center; align-items:center; gap:8px; background-color: #25d366; color: white; padding: 10px; border-radius: 5px; text-decoration: none;">
+        PEDIR POR WSP
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- LÓGICA JAVASCRIPT PARA EL POPUP -->
+<script>
+  function openVideoModal(element) {
+    const videoSrc = element.querySelector('source').src;
+    const title = element.getAttribute('data-title');
+    const price = element.getAttribute('data-price');
+    const description = element.getAttribute('data-description');
+
+    document.getElementById('modalVideo').src = videoSrc;
+    document.getElementById('modalTitle').innerText = title;
+    document.getElementById('modalPrice').innerText = price;
+    document.getElementById('modalDescription').innerText = description;
+    
+    // Configura el link de WhatsApp automático con el nombre de la gorra
+    document.getElementById('modalWspBtn').href = `https://wa.me/584128705612?text=Hola!%20Me%20interesa%20la%20gorra:%20${encodeURIComponent(title)}`;
+
+    document.getElementById('videoModal').style.display = 'flex';
+  }
+
+  function closeVideoModal(eventForce) {
+    // Cierra si se hace click fuera del contenido o en la 'X'
+    if (eventForce === true || eventForce.target.id === 'videoModal') {
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('modalVideo');
+      modal.style.display = 'none';
+      video.src = ''; // Pausa y resetea el video al cerrar
+    }
+  }
+</script>
     
