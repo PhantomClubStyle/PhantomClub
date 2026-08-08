@@ -14,7 +14,7 @@
       padding: 0;
     }
 
-    /* --- ENCABEZADO FINAL PERFECTO --- */
+    /* --- BARRA FIJA, NEGRA Y PERFECTA --- */
 .navbar {
   position: fixed !important;
   top: 0 !important;
@@ -25,29 +25,32 @@
   display: flex !important;
   justify-content: space-between !important;
   align-items: center !important;
-  padding: 12px 18px !important; /* Altura ideal de la barra, ni muy flaca ni muy gorda */
+  padding: 10px 16px !important;
   box-sizing: border-box !important;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9) !important;
   max-width: 100% !important;
   margin: 0 !important;
 }
 
-/* Agrupamos logo y texto a la izquierda */
 .brand-container {
   display: flex !important;
   align-items: center !important;
   gap: 15px !important;
 }
 
-/* LOGO GRANDE */
-.navbar img, .navbar svg, .brand-container img, .brand-container svg {
-  height: 50px !important; /* Logo bien grande y visible */
-  width: auto !important;
-  object-fit: contain !important;
+/* --- TAMAÑO DEL LOGO VECTORIZADO (SVG) --- */
+.brand-container svg, 
+.navbar svg {
+  width: 65px !important;  /* Cambia este número si lo quieres más grande o más pequeño */
+  height: 65px !important; /* Cambia este número si lo quieres más grande o más pequeño */
+  min-width: 65px !important;
+  min-height: 65px !important;
+  max-width: none !important;
+  max-height: none !important;
   display: block !important;
 }
 
-/* TEXTO PHANTOM CLUB CENTRADO AL LADO DEL LOGO */
+/* TEXTO PHANTOM CLUB */
 .navbar h1, .navbar .brand-title, .brand-container span {
   font-size: 1.2rem !important;
   font-weight: bold !important;
@@ -56,7 +59,7 @@
   margin: 0 !important;
 }
 
-/* BOTÓN STORE A LA DERECHA EN SU SITIO */
+/* BOTÓN STORE */
 .navbar .btn-store {
   padding: 8px 16px !important;
   font-size: 0.85rem !important;
@@ -68,12 +71,13 @@
   text-decoration: none !important;
 }
 
-/* Ajuste del cuerpo para la barra */
+/* ESPACIO PARA QUE LA BARRA NO TAPE EL CONTENIDO */
 body {
   background-color: #0a0a0a !important;
   color: #ffffff !important;
-  padding-top: 80px !important;
+  padding-top: 85px !important;
 }
+    
     
     
     
