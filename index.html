@@ -271,6 +271,25 @@
     .modal-video-wrapper { width: 100%; aspect-ratio: 9/16; max-height: 55vh; background: #000; }
     .modal-info { padding: 15px; color: #fff; }
     .modal-title { font-size: 1.1rem; font-weight: bold; margin-bottom: 5px; }
+    <div class="modal-info">
+  <div class="modal-title">Nombre de la Gorra</div>
+  <div class="modal-price">$46.00 BCV</div>
+  
+  <!-- PEGAR ESTO: Etiqueta NFC Compacta -->
+  <div class="modal-nfc-badge">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
+      <path d="M8 11.5c1.5-1 3.5-1 5 0"></path>
+      <path d="M9.5 8.5c2-1 5-1 7 0"></path>
+      <path d="M6.5 14.5c2.5-1.5 6.5-1.5 9 0"></path>
+    </svg>
+    <span>NFC AUTHENTICATED</span>
+  </div>
+  <!-- FIN DE LO QUE DEBES PEGAR -->
+
+  <div class="modal-description">Diseño único con acabados premium...</div>
+</div>
+    
     .modal-price { color: #00ff66; font-weight: bold; margin-bottom: 8px; }
     .modal-description { font-size: 0.85rem; color: #ccc; line-height: 1.4; margin-bottom: 15px; }
     .close-modal { position: absolute; top: 10px; right: 15px; color: white; font-size: 28px; font-weight: bold; cursor: pointer; z-index: 11; }
@@ -295,7 +314,36 @@
     .product-card.hidden-card {
       display: none !important;
     }
-    </style>
+  /* --- Etiqueta NFC para el Modal --- */
+.modal-nfc-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background-color: #1a1a1a; /* Un gris muy oscuro, casi negro */
+  border: 1px solid #333;
+  padding: 5px 10px;
+  border-radius: 4px; /* Bordes ligeramente redondeados, muy elegante */
+  margin-bottom: 12px; /* Separa la etiqueta de la descripción de abajo */
+  width: fit-content;
+}
+
+.modal-nfc-badge svg {
+  width: 13px;
+  height: 13px;
+  color: #ffffff; /* Icono blanco */
+}
+
+.modal-nfc-badge span {
+  color: #ffffff;
+  font-size: 9px; /* Letra pequeña y sutil */
+  font-weight: 800;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+    
+  
+  </style>
+  
   
   
   
