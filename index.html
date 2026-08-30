@@ -868,6 +868,49 @@
     });
   });
           </script>
+  <script>
+  // Esperamos a que todo el contenido cargue
+  document.addEventListener('DOMContentLoaded', () => {
+    const filterBtns = document.querySelectorAll('.btn-filter');
+    const cards = document.querySelectorAll('.product-card');
+
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // 1. Quitamos la clase 'active' de todos los botones y se la ponemos al que se hizo clic
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+
+        // 2. Verificamos si el botón presionado es el de "Exclusivas"
+        const isExclusivasBtn = btn.textContent.toLowerCase().includes('ofertas');
+
+        // 3. Filtramos las tarjetas
+        cards.forEach(card => {
+          // Revisamos si la tarjeta tiene la etiqueta "EXCLUSIVO" en su código HTML
+          const isExclusivaCard = card.innerHTML.includes('OFERTA');
+          
+          let shouldShow = true;
+          if (isOfertasBtn && !isOfertasCard) {
+            shouldShow = false; // Si piden exclusivas y esta no lo es, la ocultamos
+          }
+
+          if (shouldShow) {
+            // MOSTRAR CON ANIMACIÓN
+            card.classList.remove('hidden-card'); // La devolvemos al espacio (sigue invisible)
+            setTimeout(() => {
+              card.classList.remove('fade-out'); // Quitamos la transparencia para que aparezca suavemente
+            }, 20); // Un mini retraso para que el navegador capte el cambio
+          } else {
+            // OCULTAR CON ANIMACIÓN
+            card.classList.add('fade-out'); // Iniciamos la animación (se desvanece y achica)
+            setTimeout(() => {
+              card.classList.add('hidden-card'); // La quitamos del espacio al terminar la animación
+            }, 300); // Esperamos 300ms (lo mismo que dura la transición en el CSS)
+          }
+        });
+      });
+    });
+  });
+  </script>
   
 </body>
 </html>
