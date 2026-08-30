@@ -886,7 +886,7 @@
         // 3. Filtramos las tarjetas
         cards.forEach(card => {
           // Revisamos si la tarjeta tiene la etiqueta "EXCLUSIVO" en su código HTML
-          const isExclusivaCard = card.innerHTML.includes('OFERTA');
+          const isOfertasCard = card.innerHTML.includes('OFERTA');
           
           let shouldShow = true;
           if (isOfertasBtn && !isOfertasCard) {
