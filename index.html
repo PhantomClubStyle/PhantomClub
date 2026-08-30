@@ -750,27 +750,36 @@
 
   <script>
         function filterProducts(category, btnElement) {
-      const buttons = document.querySelectorAll('.btn-filter');
-      buttons.forEach(b => b.classList.remove('active'));
-      if (btnElement) {
-        btnElement.classList.add('active');
-      }
+  const buttons = document.querySelectorAll('.btn-filter');
+  buttons.forEach(b => b.classList.remove('active'));
+  if (btnElement) {
+    btnElement.classList.add('active');
+  }
 
-      const cards = document.querySelectorAll('.product-card');
-      cards.forEach(card => {
-        if (category === 'all') {
-          card.classList.remove('hidden-card');
-          card.style.display = 'flex';
-        } else if (category === 'exclusive') {
-          if (card.classList.contains('category-exclusive')) {
-            card.classList.remove('hidden-card');
-            card.style.display = 'flex';
-          } else {
-            card.classList.add('hidden-card');
-          }
-        }
-      });
+  const cards = document.querySelectorAll('.product-card');
+  cards.forEach(card => {
+    if (category === 'all') {
+      card.classList.remove('hidden-card');
+      card.style.display = 'flex';
+    } else if (category === 'exclusive') {
+      if (card.classList.contains('category-exclusive')) {
+        card.classList.remove('hidden-card');
+        card.style.display = 'flex';
+      } else {
+        card.classList.add('hidden-card');
       }
+    } else if (category === 'ofertas') {
+      // AQUÍ ESTÁ EL FILTRO PARA LAS OFERTAS
+      if (card.classList.contains('category-ofertas') || card.innerHTML.includes('OFERTA')) {
+        card.classList.remove('hidden-card');
+        card.style.display = 'flex';
+      } else {
+        card.classList.add('hidden-card');
+      }
+    }
+  });
+        }
+    
           
 
     function openVideoModal(element) {
