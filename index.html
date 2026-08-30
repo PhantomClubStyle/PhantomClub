@@ -827,89 +827,55 @@
   </script>
   <script>
   // Esperamos a que todo el contenido cargue
-  document.addEventListener('DOMContentLoaded', () => {
-    const filterBtns = document.querySelectorAll('.btn-filter');
-    const cards = document.querySelectorAll('.product-card');
+    document.addEventListener('DOMContentLoaded', () => {
+  const filterBtns = document.querySelectorAll('.btn-filter');
+  const cards = document.querySelectorAll('.product-card');
 
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // 1. Quitamos la clase 'active' de todos los botones y se la ponemos al que se hizo clic
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      // 1. Cambiar la clase 'active' del botón
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
 
-        // 2. Verificamos si el botón presionado es el de "Exclusivas"
-        const isExclusivasBtn = btn.textContent.toLowerCase().includes('exclusivas');
+      // 2. Detectar qué botón se presionó según su texto
+      const textoBtn = btn.textContent.toLowerCase();
+      const esExclusivas = textoBtn.includes('exclusiva');
+      const esOfertas = textoBtn.includes('oferta');
 
-        // 3. Filtramos las tarjetas
-        cards.forEach(card => {
-          // Revisamos si la tarjeta tiene la etiqueta "EXCLUSIVO" en su código HTML
-          const isExclusivaCard = card.innerHTML.includes('EXCLUSIVO');
-          
-          let shouldShow = true;
-          if (isExclusivasBtn && !isExclusivaCard) {
-            shouldShow = false; // Si piden exclusivas y esta no lo es, la ocultamos
-          }
+      // 3. Filtrar las tarjetas
+      cards.forEach(card => {
+        let shouldShow = true;
 
-          if (shouldShow) {
-            // MOSTRAR CON ANIMACIÓN
-            card.classList.remove('hidden-card'); // La devolvemos al espacio (sigue invisible)
-            setTimeout(() => {
-              card.classList.remove('fade-out'); // Quitamos la transparencia para que aparezca suavemente
-            }, 20); // Un mini retraso para que el navegador capte el cambio
-          } else {
-            // OCULTAR CON ANIMACIÓN
-            card.classList.add('fade-out'); // Iniciamos la animación (se desvanece y achica)
-            setTimeout(() => {
-              card.classList.add('hidden-card'); // La quitamos del espacio al terminar la animación
-            }, 300); // Esperamos 300ms (lo mismo que dura la transición en el CSS)
-          }
-        });
+        if (esExclusivas) {
+          // Si es el botón exclusivas, solo muestra las que tengan EXCLUSIVO o la clase exclusive
+          const esExclusivaCard = card.innerHTML.includes('EXCLUSIVO') || card.classList.contains('category-exclusive');
+          if (!esExclusivaCard) shouldShow = false;
+        } 
+        else if (esOfertas) {
+          // Si es el botón ofertas, solo muestra la que tenga OFERTA o la clase category-ofertas
+          const esOfertaCard = card.innerHTML.includes('OFERTA') || card.classList.contains('category-ofertas');
+          if (!esOfertaCard) shouldShow = false;
+        }
+
+        // 4. Aplicar los cambios visuales con animación
+        if (shouldShow) {
+          card.classList.remove('hidden-card');
+          card.style.display = 'flex'; // Asegura que vuelva a mostrarse como flex
+          setTimeout(() => {
+            card.classList.remove('fade-out');
+          }, 20);
+        } else {
+          card.classList.add('fade-out');
+          setTimeout(() => {
+            card.classList.add('hidden-card');
+            card.style.display = 'none'; // La oculta por completo
+          }, 300);
+        }
       });
     });
   });
-          </script>
-  <script>
-  // Esperamos a que todo el contenido cargue
-  document.addEventListener('DOMContentLoaded', () => {
-    const filterBtns = document.querySelectorAll('.btn-filter');
-    const cards = document.querySelectorAll('.product-card');
-
-    filterBtns.forEach(btn => {
-      btn.addEventListener('click', () => {
-        // 1. Quitamos la clase 'active' de todos los botones y se la ponemos al que se hizo clic
-        filterBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-
-        // 2. Verificamos si el botón presionado es el de "Exclusivas"
-        const isExclusivasBtn = btn.textContent.toLowerCase().includes('ofertas');
-
-        // 3. Filtramos las tarjetas
-        cards.forEach(card => {
-          // Revisamos si la tarjeta tiene la etiqueta "EXCLUSIVO" en su código HTML
-          const isOfertasCard = card.innerHTML.includes('OFERTA');
-          
-          let shouldShow = true;
-          if (isOfertasBtn && !isOfertasCard) {
-            shouldShow = false; // Si piden exclusivas y esta no lo es, la ocultamos
-          }
-
-          if (shouldShow) {
-            // MOSTRAR CON ANIMACIÓN
-            card.classList.remove('hidden-card'); // La devolvemos al espacio (sigue invisible)
-            setTimeout(() => {
-              card.classList.remove('fade-out'); // Quitamos la transparencia para que aparezca suavemente
-            }, 20); // Un mini retraso para que el navegador capte el cambio
-          } else {
-            // OCULTAR CON ANIMACIÓN
-            card.classList.add('fade-out'); // Iniciamos la animación (se desvanece y achica)
-            setTimeout(() => {
-              card.classList.add('hidden-card'); // La quitamos del espacio al terminar la animación
-            }, 300); // Esperamos 300ms (lo mismo que dura la transición en el CSS)
-          }
-        });
-      });
-    });
-  });
+});
+    
   </script>
   
 </body>
